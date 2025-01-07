@@ -5,7 +5,7 @@ COPY package*.json $WORKDIR
 RUN npm install 
 
 COPY . .
-RUN npm run build
+# RUN npm run build
 
 # FROM node:12-alpine
 # ENV USER node
