@@ -1,8 +1,11 @@
-FROM node:12-alpine
+FROM node:23.3.0-alpine
 ENV WORKDIR /usr/src/app/
 WORKDIR $WORKDIR
 COPY package*.json $WORKDIR
-RUN npm install --production --no-cache
+RUN npm install 
+
+COPY . .
+RUN npm run build
 
 # FROM node:12-alpine
 # ENV USER node
@@ -16,3 +19,4 @@ RUN npm install --production --no-cache
 # Then all further actions including running the containers should be done under non-root user.
 # USER $USER
 EXPOSE 4000
+CMD [ "npm","start"]
