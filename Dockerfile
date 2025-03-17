@@ -1,4 +1,4 @@
-FROM node:23.3.0-alpine
+FROM node:23.10.0-alpine
 ENV WORKDIR /usr/src/app/
 WORKDIR $WORKDIR
 COPY package*.json $WORKDIR
